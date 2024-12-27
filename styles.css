@@ -1,0 +1,80 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Cells */
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Cell hover effect */
+.cell:hover {
+    background-color: #eaeaea;
+}
+
+/* Status and Reset Button */
+#status {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#resetButton {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #6e00ff; /* Purple */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#resetButton:hover {
+    background-color: #5300cc;
+}
