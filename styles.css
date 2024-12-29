@@ -12,7 +12,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #c8e6c9, #b2ebf2, #81c784); /* Doar nuanțe de verde */
+    background-size: 400% 400%; /* Animație pentru efect dinamic */
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Container */
@@ -28,7 +36,7 @@ body {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #2e7d32; /* Verde închis */
 }
 
 /* Game Board */
@@ -43,8 +51,8 @@ h1 {
 .cell {
     width: 100px;
     height: 100px;
-    background-color: #f9f9f9;
-    border: 2px solid #ddd;
+    background-color: #e8f5e9; /* Verde deschis */
+    border: 2px solid #a5d6a7; /* Verde mai intens */
     font-size: 2.5rem;
     display: flex;
     justify-content: center;
@@ -55,19 +63,20 @@ h1 {
 
 /* Cell hover effect */
 .cell:hover {
-    background-color: #eaeaea;
+    background-color: #c8e6c9; /* Verde mai deschis la hover */
 }
 
 /* Status and Reset Button */
 #status {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #388e3c; /* Verde închis pentru text */
 }
 
 #resetButton {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #6e00ff; /* Purple */
+    background-color: #66bb6a; /* Verde mediu */
     color: white;
     border: none;
     border-radius: 10px;
@@ -76,5 +85,135 @@ h1 {
 }
 
 #resetButton:hover {
-    background-color: #5300cc;
+    background-color: #43a047; /* Verde mai închis */
 }
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #2e7d32; /* Verde închis */
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundal semi-transparent */
+    padding: 5px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Layout pentru joc */
+.game-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Tabela de scor */
+.scoreboard {
+    background-color: #2e7d32; /* Verde închis */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.scoreboard h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #a5d6a7; /* Verde deschis */
+}
+
+.scoreboard p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.scoreboard span {
+    font-weight: bold;
+    color: #c8e6c9; /* Verde evidențiat */
+}
+
+/* Buton reset */
+#resetButton {
+    margin-top: 20px;
+}
+
+.game-mode {
+    margin-bottom: 20px;
+}
+
+.game-mode button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4CAF50; /* Verde deschis */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-mode button:hover {
+    background-color: #45a049; /* Verde mai închis la hover */
+}
+
+/* Culoare diferită pentru butonul selectat */
+.game-mode button.selected {
+    background-color: #2e7d32; /* Verde mai închis pentru butonul activ */
+}
+
+button.selected {
+    background-color: #006400; /* Verde închis */
+    color: white;
+    border: 2px solid #004d00;
+}
+
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(3, 60px);
+        grid-gap: 5px;
+    }
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    .scoreboard {
+        width: 150px;
+        padding: 10px;
+    }
+}
+
+.cell:active {
+    background-color: #a5d6a7; /* Verde mai intens */
+}
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Evidențierea combinației câștigătoare */
+.winning-cell {
+    background-color: #66bb6a !important; /* Verde strălucitor */
+    color: white;
+    animation: pulse 1s infinite; /* Efect animat */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
