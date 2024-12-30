@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X și O</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<div class="container">
-    <h1>X & O</h1>
+    <div class="container">
+        <h1>X & O</h1>
 
-    <!-- Modul de selecție pentru tipul de joc -->
-    <div class="game-mode">
-        <button onclick="setGameMode('human')">Jucător vs Jucător</button>
-        <button onclick="setGameMode('computer')">Jucător vs Computer</button>
-    </div>
-
-    <!-- Buton pentru crearea jocului -->
-    <div class="game-mode">
-        <button id="createGame">Creează joc</button>
-    </div>
-
-    <!-- Lobby pentru afișarea jucătorilor disponibili -->
-    <div id="lobby">
-        <h2>Jucători disponibili</h2>
-        <ul id="players-list"></ul> <!-- Am adăugat un ID pentru listă -->
-    </div>
-
-    <!-- Conținutul jocului -->
-    <div class="game-content">
-        <!-- Tabla de joc -->
-        <div class="game-board">
-            <div class="cell" id="cell-0" onclick="makeMove(0)"></div>
-            <div class="cell" id="cell-1" onclick="makeMove(1)"></div>
-            <div class="cell" id="cell-2" onclick="makeMove(2)"></div>
-            <div class="cell" id="cell-3" onclick="makeMove(3)"></div>
-            <div class="cell" id="cell-4" onclick="makeMove(4)"></div>
-            <div class="cell" id="cell-5" onclick="makeMove(5)"></div>
-            <div class="cell" id="cell-6" onclick="makeMove(6)"></div>
-            <div class="cell" id="cell-7" onclick="makeMove(7)"></div>
-            <div class="cell" id="cell-8" onclick="makeMove(8)"></div>
+        <!-- Modul de selecție pentru tipul de joc -->
+        <div class="game-mode">
+            <button onclick="setGameMode('human')">Jucător vs Jucător</button>
+            <button onclick="setGameMode('computer')">Jucător vs Computer</button>
         </div>
 
-        <!-- Tabela de scor -->
-        <div class="scoreboard">
-            <h2>Tabela de scor</h2>
-            <p>Jucătorul X: <span id="scoreX">0</span></p>
-            <p>Jucătorul O: <span id="scoreO">0</span></p>
-            <p>Jocuri jucate: <span id="gamesPlayed">0</span></p>
+        <!-- Buton pentru crearea jocului -->
+        <div class="game-mode">
+            <button id="createGame">Creează joc</button>
         </div>
+
+        <!-- Lobby pentru afișarea jucătorilor disponibili -->
+        <div id="lobby">
+            <h2>Jucători disponibili</h2>
+            <ul id="players-list"></ul> <!-- Am adăugat un ID pentru listă -->
+        </div>
+
+        <!-- Conținutul jocului -->
+        <div class="game-content">
+            <!-- Tabla de joc -->
+            <div class="game-board">
+                <div class="cell" id="cell-0" onclick="makeMove(0)"></div>
+                <div class="cell" id="cell-1" onclick="makeMove(1)"></div>
+                <div class="cell" id="cell-2" onclick="makeMove(2)"></div>
+                <div class="cell" id="cell-3" onclick="makeMove(3)"></div>
+                <div class="cell" id="cell-4" onclick="makeMove(4)"></div>
+                <div class="cell" id="cell-5" onclick="makeMove(5)"></div>
+                <div class="cell" id="cell-6" onclick="makeMove(6)"></div>
+                <div class="cell" id="cell-7" onclick="makeMove(7)"></div>
+                <div class="cell" id="cell-8" onclick="makeMove(8)"></div>
+            </div>
+
+            <!-- Tabela de scor -->
+            <div class="scoreboard">
+                <h2>Tabela de scor</h2>
+                <p>Jucătorul X: <span id="scoreX">0</span></p>
+                <p>Jucătorul O: <span id="scoreO">0</span></p>
+                <p>Jocuri jucate: <span id="gamesPlayed">0</span></p>
+            </div>
+        </div>
+
+        <!-- Statusul jocului -->
+        <p id="status">Este rândul jucătorului X</p>
+
+        <!-- Buton de resetare -->
+        <button id="resetButton" onclick="resetGame()">Resetează jocul</button>
     </div>
 
-    <!-- Statusul jocului -->
-    <p id="status">Este rândul jucătorului X</p>
-
-    <!-- Buton de resetare -->
-    <button id="resetButton" onclick="resetGame()">Resetează jocul</button>
-</div>
-
-<!-- Scripturi -->
-<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script> <!-- Socket.io -->
-<script src="script.js"></script> <!-- Script-ul aplicației -->
+    <!-- Scripturi -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script> <!-- Socket.io -->
+    <script src="script.js"></script> <!-- Script-ul aplicației -->
 </body>
 <footer>
     <p>&copy; 2024. All rights reserved. Druid45ra</p>
 </footer>
+
 </html>

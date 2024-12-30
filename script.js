@@ -170,8 +170,6 @@ socket.on('startGame', (symbol) => {
 
 // Script completat cu sunete și efecte vizuale
 
-const socket = io();
-
 let playerSymbol;
 let gameId;
 let isMyTurn = false;
